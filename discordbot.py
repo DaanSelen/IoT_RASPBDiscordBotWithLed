@@ -13,7 +13,9 @@ intents = discord.Intents.default()
 intents.members = True
 currentStatus = 0
 
-TOKEN = 'OTEyMjk0MjU0ODg4NDg4OTcw.YZt2Ow.LuZUgVoBDRaqp6z0nrSVDWBR6BM'
+f = open("BotToken.key", "r")
+token = f.readline()
+f.close()
 
 client = commands.Bot(command_prefix = "?" ,help_command=None, intents=intents)
 
@@ -52,4 +54,5 @@ async def blink(ctx, arg):
     else:
         await ctx.send("That is not a number, or the number is too big! Try again.")
 
-client.run(TOKEN)
+client.run(token)
+
